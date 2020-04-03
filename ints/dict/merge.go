@@ -1,0 +1,19 @@
+package dict
+
+// 合并
+func Merge(list ...map[string]int) map[string]int {
+	if list == nil {
+		return nil
+	}
+
+	r := make(map[string]int)
+	for _, m := range list {
+		if m != nil {
+			for k, v := range m {
+				r[k] = v
+			}
+		}
+	}
+
+	return r
+}
